@@ -1,6 +1,6 @@
 require "httparty" 
 
-class GoogleSearch
+class WeatherSearch
 
 	include HTTParty
 
@@ -46,10 +46,10 @@ class GoogleSearch
 		else
 			puts "Only string is allowed"
 		end
- 	end
+	end
 end
 
-search = GoogleSearch.new
+search = WeatherSearch.new
 
 search.error_handler
 
