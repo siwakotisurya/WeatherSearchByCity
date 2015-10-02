@@ -10,7 +10,14 @@ class GoogleSearch
 		puts "just a moment please system is handling your request"
 		puts "."*10
 		find_keyword = self.class.get("/weather?q=#{@location}.json")
-		parse_json = JSON.parse(find_keyword.body)
+		json = JSON.parse(find_keyword.body)
+		puts json
+		puts "Longitude :  #{json["coord"]["lon"]}"
+		puts "Latitude: #{json["coord"]["lat"]}"
+		puts "Current Temperature: #{json["main"]["temp"]-272.15} degree celcius"
+		puts "Counrty: #{json["sys"]["country"]}"
+		puts "Humidity: #{json["main"]["humidity"]}%"
+		puts "Wind Spped: #{json["wind"]["speed"]}m/s"
 	end
 
 	def user_ask
